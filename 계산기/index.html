@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1f1f1f;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            width: 287px;
+            border: 1px solid #333;
+            background-color: #ccc;
+            padding: 5px;
+            border-radius: 20px;
+
+
+        }
+
+        .forms {
+            display: grid;
+            grid-template-columns: repeat(4, 65px);
+            grid-auto-rows: 65px;
+            grid-gap: 5px
+        }
+
+        .forms input {
+            border: 2px solid #333;
+            cursor: pointer;
+            border-radius: 30px;
+            font-size: 19px;
+
+        }
+
+        .forms input:hover {
+            box-shadow: 1px 1px 2px #333;
+
+        }
+
+        .clear {
+            background-color: green;
+        }
+
+        .operator {
+            background-color: orange;
+        }
+
+        .dot {
+            background-color: orange;
+        }
+
+        .forms input[type='text'] {
+            grid-column: span 4;
+            text-align: right;
+            padding: 0 10px;
+        }
+
+        .clear {
+            grid-column: span 3;
+        }
+
+        .operator_result {
+            grid-column: span 2;
+            background-color: royalblue
+        }
+    </style>
+    <script>
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <form class="forms">
+            <input type="text" name="output" readonly>
+            <input type="button" class="clear" value="C" onclick='output.value=""'>
+            <input type="button" class="operator" value="/" onclick='output.value+="/"'>
+            <input type="button" value="1" onclick='output.value+="1"'>
+            <input type="button" value="2" onclick='output.value+="2"'>
+            <input type="button" value="3" onclick='output.value+="3"'>
+            <input type="button" class="operator" value="X" onclick='output.value+="*"'>
+            <input type="button" value="4" onclick='output.value+="4"'>
+            <input type="button" value="5" onclick='output.value+="5"'>
+            <input type="button" value="6" onclick='output.value+="6"'>
+            <input type="button" class="operator" value="+" onclick='output.value+="+"'>
+            <input type="button" value="7" onclick='output.value+="7"'>
+            <input type="button" value="8" onclick='output.value+="8"'>
+            <input type="button" value="9" onclick='output.value+="9"'>
+            <input type="button" class="operator" value="-" onclick='output.value+="-"'>
+            <input type="button" class="dot" value="." onclick='output.value+="."'>
+            <input type="button" value="0" onclick='output.value+="0"'>
+            <input type="button" class="operator_result" value="=" onclick='output.value=eval(output.value)'>
+        </form>
+    </div>
+</body>
+
+</html>
